@@ -1,6 +1,6 @@
 // JSONBin Configuration
-const JSONBIN_API_KEY = '$2a$10$YOUR_API_KEY_HERE'; // Replace with your JSONBin API key
-const BIN_ID = 'YOUR_BIN_ID_HERE'; // Replace with your bin ID
+const JSONBIN_API_KEY = '$2a$10$s9AZal23OUPcRVAVcXSFKuMFtoVK/BPXy/JpltDkUS/xraVS/7FkW'; // Your JSONBin API key
+const BIN_ID = '68bc77e643b1c97be9392ca9'; // Your JSONBin ID
 const JSONBIN_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
 
 // DOM Elements
@@ -21,7 +21,7 @@ let filteredInnovations = [];
 document.addEventListener('DOMContentLoaded', () => {
     initializeNavigation();
     
-    if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
+    if (window.location.pathname.includes('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
         loadInnovations();
         initializeFilters();
     }
@@ -136,8 +136,10 @@ function displayInnovations() {
     innovationsGrid.style.display = 'grid';
     if (noResults) noResults.style.display = 'none';
     
-    innovationsGrid.innerHTML = filteredInnovations.map(innovation => `
-        <div class="innovation-card" style="animation-delay: ${Math.random() * 0.3}s">
+    const isListView = innovationsGrid.classList.contains('list-view');
+    
+    innovationsGrid.innerHTML = filteredInnovations.map((innovation, index) => `
+        <div class="innovation-card ${isListView ? 'list-view' : ''}" style="animation-delay: ${index * 0.1}s">
             <div class="card-header">
                 <div>
                     <h3 class="card-title">${escapeHtml(innovation.title)}</h3>
@@ -188,28 +190,83 @@ function initializeFilters() {
         searchInput.addEventListener('input', filterInnovations);
     }
     
-    if (categoryFilter) {
-        categoryFilter.addEventListener('change', filterInnovations);
+    // Category filter tabs
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            filterTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            filterInnovations();
+        });
+    });
+    
+    // Sort select
+    const sortSelect = document.getElementById('sort-select');
+    if (sortSelect) {
+        sortSelect.addEventListener('change', sortInnovations);
     }
 }
 
 // Filter innovations
 function filterInnovations() {
     const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
-    const selectedCategory = categoryFilter ? categoryFilter.value : '';
+    const activeTab = document.querySelector('.filter-tab.active');
+    const selectedCategory = activeTab ? activeTab.dataset.category : '';
     
     filteredInnovations = innovations.filter(innovation => {
         const matchesSearch = !searchTerm || 
             innovation.title.toLowerCase().includes(searchTerm) ||
             innovation.description.toLowerCase().includes(searchTerm) ||
-            innovation.author.toLowerCase().includes(searchTerm);
+            (innovation.author && innovation.author.toLowerCase().includes(searchTerm));
         
         const matchesCategory = !selectedCategory || innovation.category === selectedCategory;
         
         return matchesSearch && matchesCategory;
     });
     
+    sortInnovations();
+    updateResultsCount();
+}
+
+// Sort innovations
+function sortInnovations() {
+    const sortSelect = document.getElementById('sort-select');
+    const sortBy = sortSelect ? sortSelect.value : 'newest';
+    
+    filteredInnovations.sort((a, b) => {
+        switch (sortBy) {
+            case 'popular':
+                return (b.likes || 0) - (a.likes || 0);
+            case 'title':
+                return a.title.localeCompare(b.title);
+            case 'newest':
+            default:
+                return new Date(b.timestamp) - new Date(a.timestamp);
+        }
+    });
+    
     displayInnovations();
+}
+
+// Toggle view
+function toggleView(view) {
+    const grid = document.getElementById('innovations-grid');
+    if (grid) {
+        if (view === 'list') {
+            grid.classList.add('list-view');
+        } else {
+            grid.classList.remove('list-view');
+        }
+    }
+}
+
+// Update results count
+function updateResultsCount() {
+    const resultsCount = document.getElementById('results-count');
+    if (resultsCount) {
+        const count = filteredInnovations.length;
+        resultsCount.textContent = `${count} innovation${count !== 1 ? 's' : ''}`;
+    }
 }
 
 // Initialize submit form
@@ -224,14 +281,14 @@ async function handleSubmit(e) {
     e.preventDefault();
     
     const formData = new FormData(submitForm);
-    const submitButton = submitForm.querySelector('.submit-button');
-    const buttonText = submitButton.querySelector('.button-text');
-    const buttonLoader = submitButton.querySelector('.button-loader');
+    const submitButton = submitForm.querySelector('button[type="submit"]');
+    const buttonText = submitButton.querySelector('.btn-text');
+    const buttonLoader = submitButton.querySelector('.btn-loader');
     
     // Show loading state
     submitButton.disabled = true;
-    buttonText.style.display = 'none';
-    buttonLoader.style.display = 'block';
+    if (buttonText) buttonText.style.display = 'none';
+    if (buttonLoader) buttonLoader.style.display = 'flex';
     
     try {
         const newInnovation = {
@@ -251,17 +308,18 @@ async function handleSubmit(e) {
         // Save to JSONBin (if configured)
         await saveInnovations();
         
-        // Show success message
+        // Clear form and show success message
+        submitForm.reset();
         showSuccessMessage();
         
     } catch (error) {
         console.error('Error submitting innovation:', error);
         alert('Error submitting innovation. Please try again.');
-    } finally {
-        // Reset button state
+        
+        // Reset button state on error
         submitButton.disabled = false;
-        buttonText.style.display = 'block';
-        buttonLoader.style.display = 'none';
+        if (buttonText) buttonText.style.display = 'flex';
+        if (buttonLoader) buttonLoader.style.display = 'none';
     }
 }
 
@@ -285,7 +343,7 @@ async function saveInnovations() {
 
 // Show success message
 function showSuccessMessage() {
-    const form = document.querySelector('.submit-form');
+    const form = document.querySelector('.innovation-form');
     const successMessage = document.getElementById('success-message');
     
     if (form && successMessage) {
@@ -294,19 +352,20 @@ function showSuccessMessage() {
     }
 }
 
-// Update stats on about page
+// Update stats
 function updateStats() {
-    const totalInnovationsEl = document.getElementById('total-innovations');
-    const totalLikesEl = document.getElementById('total-likes');
+    const heroInnovations = document.getElementById('hero-innovations');
+    const heroLikes = document.getElementById('hero-likes');
     
-    if (totalInnovationsEl) {
-        // Animate counter
-        animateCounter(totalInnovationsEl, innovations.length);
+    const innovationCount = innovations.length;
+    const totalLikes = innovations.reduce((sum, innovation) => sum + (innovation.likes || 0), 0);
+    
+    if (heroInnovations) {
+        animateCounter(heroInnovations, innovationCount);
     }
     
-    if (totalLikesEl) {
-        const totalLikes = innovations.reduce((sum, innovation) => sum + (innovation.likes || 0), 0);
-        animateCounter(totalLikesEl, totalLikes);
+    if (heroLikes) {
+        animateCounter(heroLikes, totalLikes);
     }
 }
 

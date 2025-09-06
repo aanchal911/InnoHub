@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InnoHub - Share Your Micro-Innovations</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fas fa-lightbulb"></i>
+                <div class="logo-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
                 <span>InnoHub</span>
             </div>
             <div class="nav-menu" id="nav-menu">
                 <a href="index.html" class="nav-link active">Home</a>
-                <a href="submit.html" class="nav-link">Submit Idea</a>
+                <a href="submit.html" class="nav-link">Submit</a>
                 <a href="about.html" class="nav-link">About</a>
             </div>
             <div class="nav-toggle" id="nav-toggle">
@@ -27,182 +31,257 @@
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-particles"></div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <i class="fas fa-rocket"></i>
-                <span>Community Driven Innovation</span>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
             </div>
-            <h1 class="hero-title">
-                Share Your <span class="gradient-text">Micro-Innovations</span>
-            </h1>
-            <p class="hero-subtitle">Join thousands of innovators sharing creative ideas, life hacks, and breakthrough solutions that transform everyday challenges</p>
-            <div class="hero-buttons">
-                <a href="submit.html" class="cta-button primary">
-                    <i class="fas fa-plus"></i>
-                    <span>Share Your Idea</span>
-                    <div class="button-glow"></div>
-                </a>
-                <a href="#innovations" class="cta-button secondary">
-                    <i class="fas fa-compass"></i>
-                    <span>Explore Ideas</span>
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-number" id="hero-innovations">0</div>
-                    <div class="stat-label">Innovations</div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-sparkles"></i>
+                    <span>Community Innovation Platform</span>
                 </div>
-                <div class="stat">
-                    <div class="stat-number" id="hero-categories">5</div>
-                    <div class="stat-label">Categories</div>
+                <h1 class="hero-title">
+                    Transform Ideas Into
+                    <span class="gradient-text">Impact</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Join thousands of innovators sharing breakthrough micro-innovations, 
+                    creative life hacks, and game-changing solutions that make everyday life better.
+                </p>
+                <div class="hero-buttons">
+                    <a href="submit.html" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        <span>Share Innovation</span>
+                    </a>
+                    <a href="#discover" class="btn btn-outline">
+                        <i class="fas fa-compass"></i>
+                        <span>Explore Ideas</span>
+                    </a>
                 </div>
-                <div class="stat">
-                    <div class="stat-number" id="hero-likes">0</div>
-                    <div class="stat-label">Community Likes</div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="hero-innovations">0</div>
+                        <div class="stat-label">Innovations</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Categories</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="hero-likes">0</div>
+                        <div class="stat-label">Likes</div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="hero-visual">
-            <div class="floating-card card-1">
-                <i class="fas fa-lightbulb"></i>
-                <span>Tech Hacks</span>
-            </div>
-            <div class="floating-card card-2">
-                <i class="fas fa-leaf"></i>
-                <span>Eco Solutions</span>
-            </div>
-            <div class="floating-card card-3">
-                <i class="fas fa-heart"></i>
-                <span>Health Tips</span>
-            </div>
-        </div>
-    </header>
+    </section>
 
-    <main class="main-content">
-        <section class="filters" id="innovations">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Discover Innovations</h2>
-                    <p>Explore creative solutions from our community</p>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon tech">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Tech Innovations</h3>
+                    <p>Digital solutions and tech hacks</p>
                 </div>
-                <div class="filter-bar">
-                    <div class="search-wrapper">
+                <div class="feature-card">
+                    <div class="feature-icon eco">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Eco Solutions</h3>
+                    <p>Sustainable and green innovations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon health">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <h3>Health & Wellness</h3>
+                    <p>Wellness tips and health hacks</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon education">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Learning Hacks</h3>
+                    <p>Educational tools and methods</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover Section -->
+    <section class="discover" id="discover">
+        <div class="container">
+            <div class="section-header">
+                <h2>Discover Innovations</h2>
+                <p>Explore creative solutions from our global community</p>
+            </div>
+            
+            <div class="discover-controls">
+                <div class="search-container">
+                    <div class="search-box">
                         <i class="fas fa-search"></i>
                         <input type="text" id="search" placeholder="Search innovations..." class="search-input">
                     </div>
-                    <div class="category-tabs">
-                        <button class="category-tab active" data-category="">All</button>
-                        <button class="category-tab" data-category="Tech">
-                            <i class="fas fa-laptop-code"></i>
-                            Tech
+                </div>
+                
+                <div class="filter-container">
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-category="">
+                            <span>All</span>
                         </button>
-                        <button class="category-tab" data-category="Environment">
+                        <button class="filter-tab" data-category="Tech">
+                            <i class="fas fa-microchip"></i>
+                            <span>Tech</span>
+                        </button>
+                        <button class="filter-tab" data-category="Environment">
                             <i class="fas fa-leaf"></i>
-                            Environment
+                            <span>Eco</span>
                         </button>
-                        <button class="category-tab" data-category="Health">
-                            <i class="fas fa-heart"></i>
-                            Health
+                        <button class="filter-tab" data-category="Health">
+                            <i class="fas fa-heart-pulse"></i>
+                            <span>Health</span>
                         </button>
-                        <button class="category-tab" data-category="Education">
+                        <button class="filter-tab" data-category="Education">
                             <i class="fas fa-graduation-cap"></i>
-                            Education
+                            <span>Education</span>
                         </button>
-                        <button class="category-tab" data-category="Lifestyle">
+                        <button class="filter-tab" data-category="Lifestyle">
                             <i class="fas fa-home"></i>
-                            Lifestyle
-                        </button>
-                    </div>
-                    <div class="view-toggle">
-                        <button class="view-btn active" data-view="grid">
-                            <i class="fas fa-th"></i>
-                        </button>
-                        <button class="view-btn" data-view="list">
-                            <i class="fas fa-list"></i>
+                            <span>Lifestyle</span>
                         </button>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="innovations">
-            <div class="container">
-                <div class="loading" id="loading">
-                    <div class="spinner"></div>
-                    <p>Loading innovations...</p>
+    <!-- Innovations Section -->
+    <section class="innovations">
+        <div class="container">
+            <div class="innovations-header">
+                <div class="results-info">
+                    <span id="results-count" class="results-count">Loading innovations...</span>
                 </div>
-                <div class="sort-bar">
-                    <div class="results-count">
-                        <span id="results-count">0 innovations found</span>
-                    </div>
+                <div class="sort-container">
                     <select id="sort-select" class="sort-select">
                         <option value="newest">Newest First</option>
-                        <option value="popular">Most Liked</option>
-                        <option value="title">A-Z</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="title">Alphabetical</option>
                     </select>
                 </div>
-                <div class="innovations-grid" id="innovations-grid">
-                    <!-- Ideas will be loaded here -->
-                </div>
-                <div class="no-results" id="no-results" style="display: none;">
-                    <i class="fas fa-search"></i>
-                    <p>No innovations found. Be the first to share!</p>
-                </div>
             </div>
-        </section>
-    </main>
 
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Share Your Innovation?</h2>
-                <p>Join our community of creative problem-solvers and help others with your unique ideas</p>
-                <a href="submit.html" class="cta-button primary large">
-                    <i class="fas fa-rocket"></i>
-                    <span>Submit Your Idea</span>
-                    <div class="button-glow"></div>
+            <div class="loading-container" id="loading">
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
+                <p>Loading amazing innovations...</p>
+            </div>
+
+            <div class="innovations-grid" id="innovations-grid">
+                <!-- Innovations will be loaded here -->
+            </div>
+
+            <div class="empty-state" id="no-results" style="display: none;">
+                <div class="empty-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>No innovations found</h3>
+                <p>Be the pioneer and share the first innovation in this category!</p>
+                <a href="submit.html" class="btn btn-primary">
+                    <i class="fas fa-plus"></i>
+                    <span>Submit First Innovation</span>
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h2>Ready to Share Your Innovation?</h2>
+                <p>Join our community of creative minds and help others with your unique solutions</p>
+                <a href="submit.html" class="btn btn-white">
+                    <i class="fas fa-plus"></i>
+                    <span>Submit Your Innovation</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-brand">
                     <div class="footer-logo">
-                        <i class="fas fa-lightbulb"></i>
+                        <div class="logo-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
                         <span>InnoHub</span>
                     </div>
-                    <p>Empowering micro-innovations worldwide through community collaboration.</p>
+                    <p>Empowering micro-innovations worldwide through community collaboration and creative problem-solving.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-discord"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Browse Ideas</a></li>
-                        <li><a href="submit.html">Submit Innovation</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Categories</h4>
-                    <ul>
-                        <li><a href="#">Technology</a></li>
-                        <li><a href="#">Environment</a></li>
-                        <li><a href="#">Health & Wellness</a></li>
-                        <li><a href="#">Education</a></li>
-                    </ul>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platform</h4>
+                        <ul>
+                            <li><a href="index.html">Browse Ideas</a></li>
+                            <li><a href="submit.html">Submit Innovation</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Categories</h4>
+                        <ul>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Environment</a></li>
+                            <li><a href="#">Health & Wellness</a></li>
+                            <li><a href="#">Education</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="#">Guidelines</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Feedback</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 InnoHub. All rights reserved.</p>
+                <p>&copy; 2024 InnoHub. All rights reserved. Made with ❤️ for innovators worldwide.</p>
             </div>
         </div>
     </footer>

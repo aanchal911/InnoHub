@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - InnoHub</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fas fa-lightbulb"></i>
+                <div class="logo-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
                 <span>InnoHub</span>
             </div>
             <div class="nav-menu" id="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="submit.html" class="nav-link">Submit Idea</a>
+                <a href="submit.html" class="nav-link">Submit</a>
                 <a href="about.html" class="nav-link active">About</a>
             </div>
             <div class="nav-toggle" id="nav-toggle">
@@ -27,62 +31,290 @@
         </div>
     </nav>
 
-    <main class="main-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="hero-bg">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+            </div>
+        </div>
         <div class="container">
-            <div class="about-content">
-                <div class="about-header">
-                    <h1>About InnoHub</h1>
-                    <p class="lead">Empowering creativity through micro-innovations</p>
+            <div class="page-hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-heart"></i>
+                    <span>Our Mission</span>
                 </div>
+                <h1 class="page-title">
+                    About <span class="gradient-text">InnoHub</span>
+                </h1>
+                <p class="page-subtitle">
+                    Empowering creativity and innovation through community collaboration. 
+                    We believe the best solutions come from shared knowledge and collective problem-solving.
+                </p>
+            </div>
+        </div>
+    </section>
 
-                <div class="about-sections">
-                    <div class="about-section">
-                        <div class="section-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h2>Our Mission</h2>
-                        <p>InnoHub is a community-driven platform where people share small but impactful innovations, life hacks, and creative solutions. We believe that the best ideas often come from everyday experiences and simple observations.</p>
-                    </div>
-
-                    <div class="about-section">
-                        <div class="section-icon">
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-text">
+                    <h2>Our Mission</h2>
+                    <p class="lead">
+                        InnoHub is a community-driven platform where people share small but impactful innovations, 
+                        life hacks, and creative solutions that make everyday life better.
+                    </p>
+                    <p>
+                        We believe that innovation doesn't always come from big corporations or research labs. 
+                        Often, the most practical and effective solutions emerge from everyday experiences, 
+                        creative thinking, and the willingness to share knowledge with others.
+                    </p>
+                    <p>
+                        Our platform celebrates micro-innovations – those small, clever solutions that might 
+                        seem simple but can have a significant impact on how we live, work, and solve problems.
+                    </p>
+                </div>
+                <div class="mission-visual">
+                    <div class="mission-card">
+                        <div class="mission-icon">
                             <i class="fas fa-users"></i>
                         </div>
-                        <h2>Community First</h2>
-                        <p>Every innovation shared here has the potential to improve someone's life. From tech shortcuts to environmental tips, health hacks to educational tools - we celebrate all forms of creative problem-solving.</p>
+                        <h3>Community First</h3>
+                        <p>Built by innovators, for innovators</p>
                     </div>
-
-                    <div class="about-section">
-                        <div class="section-icon">
-                            <i class="fas fa-rocket"></i>
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-lightbulb"></i>
                         </div>
-                        <h2>Get Started</h2>
-                        <p>Ready to share your innovation? It takes just a few minutes to contribute to our growing community of innovators. Browse existing ideas for inspiration or jump right in with your own.</p>
-                        <a href="submit.html" class="cta-button">Share Your Idea</a>
+                        <h3>Innovation Focus</h3>
+                        <p>Celebrating creative problem-solving</p>
                     </div>
-                </div>
-
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-number" id="total-innovations">0</div>
-                        <div class="stat-label">Innovations Shared</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">Categories</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="total-likes">0</div>
-                        <div class="stat-label">Community Likes</div>
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Global Impact</h3>
+                        <p>Solutions that transcend boundaries</p>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Values</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Open Sharing</h3>
+                    <p>Knowledge grows when shared freely. We encourage open collaboration and the free exchange of ideas.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We celebrate creativity in all its forms, from simple life hacks to breakthrough solutions.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Community</h3>
+                    <p>Together we're stronger. Our community of innovators supports and learns from each other.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>We promote solutions that are not just effective, but also sustainable and environmentally conscious.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-universal-access"></i>
+                    </div>
+                    <h3>Accessibility</h3>
+                    <p>Innovation should be accessible to everyone, regardless of background or resources.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Quality</h3>
+                    <p>We strive for excellence in every innovation shared, ensuring practical and valuable solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="about-stats-section">
+        <div class="container">
+            <div class="stats-header">
+                <h2>Community Impact</h2>
+                <p>See how our community is making a difference</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="stat-number" id="total-innovations">0</div>
+                    <div class="stat-label">Innovations Shared</div>
+                    <div class="stat-description">Creative solutions from our community</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Community Members</div>
+                    <div class="stat-description">Innovators from around the world</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="stat-number" id="total-likes">0</div>
+                    <div class="stat-label">Community Likes</div>
+                    <div class="stat-description">Appreciation for great ideas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Categories</div>
+                    <div class="stat-description">Diverse areas of innovation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Built with ❤️</h2>
+                <p>InnoHub is a passion project created to foster innovation and community collaboration</p>
+            </div>
+            <div class="team-content">
+                <div class="team-card">
+                    <div class="team-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Open Source</h3>
+                    <p>Built with modern web technologies and open source principles. We believe in transparency and community-driven development.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile First</h3>
+                    <p>Designed to work seamlessly across all devices, ensuring everyone can participate in the innovation community.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Privacy Focused</h3>
+                    <p>Your privacy matters. We collect minimal data and prioritize user security and anonymity options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h2>Join Our Innovation Community</h2>
+                <p>Ready to share your creative solutions and discover amazing innovations from others?</p>
+                <div class="cta-buttons">
+                    <a href="submit.html" class="btn btn-white">
+                        <i class="fas fa-plus"></i>
+                        <span>Submit Innovation</span>
+                    </a>
+                    <a href="index.html" class="btn btn-outline">
+                        <i class="fas fa-compass"></i>
+                        <span>Explore Ideas</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 InnoHub. Empowering micro-innovations worldwide.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <span>InnoHub</span>
+                    </div>
+                    <p>Empowering micro-innovations worldwide through community collaboration and creative problem-solving.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platform</h4>
+                        <ul>
+                            <li><a href="index.html">Browse Ideas</a></li>
+                            <li><a href="submit.html">Submit Innovation</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Categories</h4>
+                        <ul>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Environment</a></li>
+                            <li><a href="#">Health & Wellness</a></li>
+                            <li><a href="#">Education</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="#">Guidelines</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Feedback</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 InnoHub. All rights reserved. Made with ❤️ for innovators worldwide.</p>
+            </div>
         </div>
     </footer>
 

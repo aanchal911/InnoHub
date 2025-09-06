@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submit Innovation - InnoHub</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fas fa-lightbulb"></i>
+                <div class="logo-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
                 <span>InnoHub</span>
             </div>
             <div class="nav-menu" id="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="submit.html" class="nav-link active">Submit Idea</a>
+                <a href="submit.html" class="nav-link active">Submit</a>
                 <a href="about.html" class="nav-link">About</a>
             </div>
             <div class="nav-toggle" id="nav-toggle">
@@ -27,61 +31,242 @@
         </div>
     </nav>
 
-    <main class="main-content">
-        <div class="container">
-            <div class="submit-header">
-                <h1>Share Your Innovation</h1>
-                <p>Help others with your creative ideas and micro-innovations</p>
-            </div>
-
-            <form class="submit-form" id="submit-form">
-                <div class="form-group">
-                    <label for="title">Innovation Title</label>
-                    <input type="text" id="title" name="title" required placeholder="What's your innovation?">
-                </div>
-
-                <div class="form-group">
-                    <label for="category">Category</label>
-                    <select id="category" name="category" required>
-                        <option value="">Select a category</option>
-                        <option value="Tech">Tech</option>
-                        <option value="Environment">Environment</option>
-                        <option value="Health">Health</option>
-                        <option value="Education">Education</option>
-                        <option value="Lifestyle">Lifestyle</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea id="description" name="description" required placeholder="Describe your innovation, how it works, and why it's useful..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="author">Your Name (Optional)</label>
-                    <input type="text" id="author" name="author" placeholder="Anonymous">
-                </div>
-
-                <button type="submit" class="submit-button">
-                    <span class="button-text">Share Innovation</span>
-                    <div class="button-loader" style="display: none;">
-                        <div class="spinner-small"></div>
-                    </div>
-                </button>
-            </form>
-
-            <div class="success-message" id="success-message" style="display: none;">
-                <i class="fas fa-check-circle"></i>
-                <h3>Innovation Shared Successfully!</h3>
-                <p>Thank you for contributing to the community.</p>
-                <a href="index.html" class="back-button">View All Innovations</a>
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="hero-bg">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
             </div>
         </div>
-    </main>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-plus"></i>
+                    <span>Share Your Innovation</span>
+                </div>
+                <h1 class="page-title">
+                    Submit Your <span class="gradient-text">Innovation</span>
+                </h1>
+                <p class="page-subtitle">
+                    Share your creative ideas, life hacks, and innovative solutions with our global community of problem-solvers.
+                </p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Form Section -->
+    <section class="form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Tell Us About Your Innovation</h2>
+                    <p>Fill out the form below to share your creative solution with the community</p>
+                </div>
+
+                <form class="innovation-form" id="submit-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="title" class="form-label">
+                                <i class="fas fa-lightbulb"></i>
+                                Innovation Title
+                            </label>
+                            <input 
+                                type="text" 
+                                id="title" 
+                                name="title" 
+                                class="form-input" 
+                                placeholder="What's your innovation called?"
+                                required
+                            >
+                            <div class="form-hint">Give your innovation a catchy, descriptive name</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category" class="form-label">
+                                <i class="fas fa-tags"></i>
+                                Category
+                            </label>
+                            <select id="category" name="category" class="form-select" required>
+                                <option value="">Choose a category</option>
+                                <option value="Tech">🔧 Technology</option>
+                                <option value="Environment">🌱 Environment</option>
+                                <option value="Health">❤️ Health & Wellness</option>
+                                <option value="Education">🎓 Education</option>
+                                <option value="Lifestyle">🏠 Lifestyle</option>
+                            </select>
+                            <div class="form-hint">Select the category that best fits your innovation</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description" class="form-label">
+                            <i class="fas fa-align-left"></i>
+                            Description
+                        </label>
+                        <textarea 
+                            id="description" 
+                            name="description" 
+                            class="form-textarea" 
+                            placeholder="Describe your innovation in detail. How does it work? What problem does it solve? Why is it useful?"
+                            required
+                        ></textarea>
+                        <div class="form-hint">Provide a detailed explanation of your innovation and its benefits</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="author" class="form-label">
+                            <i class="fas fa-user"></i>
+                            Your Name (Optional)
+                        </label>
+                        <input 
+                            type="text" 
+                            id="author" 
+                            name="author" 
+                            class="form-input" 
+                            placeholder="Enter your name or stay anonymous"
+                        >
+                        <div class="form-hint">Leave blank to submit anonymously</div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span class="btn-text">
+                                <i class="fas fa-rocket"></i>
+                                Submit Innovation
+                            </span>
+                            <div class="btn-loader" style="display: none;">
+                                <div class="spinner-small"></div>
+                                Submitting...
+                            </div>
+                        </button>
+                        <a href="index.html" class="btn btn-outline">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to Browse
+                        </a>
+                    </div>
+                </form>
+
+                <!-- Success Message -->
+                <div class="success-card" id="success-message" style="display: none;">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Innovation Submitted Successfully!</h3>
+                    <p>Thank you for contributing to our community. Your innovation is now live and helping others!</p>
+                    <div class="success-actions">
+                        <a href="index.html" class="btn btn-primary">
+                            <i class="fas fa-eye"></i>
+                            View All Innovations
+                        </a>
+                        <button onclick="location.reload()" class="btn btn-outline">
+                            <i class="fas fa-plus"></i>
+                            Submit Another
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="tips-section">
+        <div class="container">
+            <div class="tips-header">
+                <h2>Tips for Great Innovations</h2>
+                <p>Follow these guidelines to make your innovation stand out</p>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Be Specific</h3>
+                    <p>Provide clear, detailed instructions that anyone can follow</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-target"></i>
+                    </div>
+                    <h3>Solve Real Problems</h3>
+                    <p>Focus on innovations that address genuine everyday challenges</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Think Community</h3>
+                    <p>Consider how your innovation can help the broader community</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Keep It Simple</h3>
+                    <p>The best innovations are often the simplest and most accessible</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 InnoHub. Empowering micro-innovations worldwide.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <span>InnoHub</span>
+                    </div>
+                    <p>Empowering micro-innovations worldwide through community collaboration and creative problem-solving.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platform</h4>
+                        <ul>
+                            <li><a href="index.html">Browse Ideas</a></li>
+                            <li><a href="submit.html">Submit Innovation</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Categories</h4>
+                        <ul>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Environment</a></li>
+                            <li><a href="#">Health & Wellness</a></li>
+                            <li><a href="#">Education</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="#">Guidelines</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Feedback</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 InnoHub. All rights reserved. Made with ❤️ for innovators worldwide.</p>
+            </div>
         </div>
     </footer>
 
