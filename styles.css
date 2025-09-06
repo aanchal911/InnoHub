@@ -207,23 +207,14 @@ body {
 }
 
 .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--radius-xl);
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: none;
 }
 
 .hero-title {
     font-size: 4rem;
     font-weight: 800;
     line-height: 1.1;
+    margin-top: 0.8rem;
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
 }
