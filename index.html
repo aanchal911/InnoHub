@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnoHub - Share Your Micro-Innovations</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-lightbulb"></i>
+                <span>InnoHub</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="submit.html" class="nav-link">Submit Idea</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-rocket"></i>
+                <span>Community Driven Innovation</span>
+            </div>
+            <h1 class="hero-title">
+                Share Your <span class="gradient-text">Micro-Innovations</span>
+            </h1>
+            <p class="hero-subtitle">Join thousands of innovators sharing creative ideas, life hacks, and breakthrough solutions that transform everyday challenges</p>
+            <div class="hero-buttons">
+                <a href="submit.html" class="cta-button primary">
+                    <i class="fas fa-plus"></i>
+                    <span>Share Your Idea</span>
+                    <div class="button-glow"></div>
+                </a>
+                <a href="#innovations" class="cta-button secondary">
+                    <i class="fas fa-compass"></i>
+                    <span>Explore Ideas</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number" id="hero-innovations">0</div>
+                    <div class="stat-label">Innovations</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="hero-categories">5</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="hero-likes">0</div>
+                    <div class="stat-label">Community Likes</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card card-1">
+                <i class="fas fa-lightbulb"></i>
+                <span>Tech Hacks</span>
+            </div>
+            <div class="floating-card card-2">
+                <i class="fas fa-leaf"></i>
+                <span>Eco Solutions</span>
+            </div>
+            <div class="floating-card card-3">
+                <i class="fas fa-heart"></i>
+                <span>Health Tips</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="filters" id="innovations">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Discover Innovations</h2>
+                    <p>Explore creative solutions from our community</p>
+                </div>
+                <div class="filter-bar">
+                    <div class="search-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search" placeholder="Search innovations..." class="search-input">
+                    </div>
+                    <div class="category-tabs">
+                        <button class="category-tab active" data-category="">All</button>
+                        <button class="category-tab" data-category="Tech">
+                            <i class="fas fa-laptop-code"></i>
+                            Tech
+                        </button>
+                        <button class="category-tab" data-category="Environment">
+                            <i class="fas fa-leaf"></i>
+                            Environment
+                        </button>
+                        <button class="category-tab" data-category="Health">
+                            <i class="fas fa-heart"></i>
+                            Health
+                        </button>
+                        <button class="category-tab" data-category="Education">
+                            <i class="fas fa-graduation-cap"></i>
+                            Education
+                        </button>
+                        <button class="category-tab" data-category="Lifestyle">
+                            <i class="fas fa-home"></i>
+                            Lifestyle
+                        </button>
+                    </div>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="innovations">
+            <div class="container">
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Loading innovations...</p>
+                </div>
+                <div class="sort-bar">
+                    <div class="results-count">
+                        <span id="results-count">0 innovations found</span>
+                    </div>
+                    <select id="sort-select" class="sort-select">
+                        <option value="newest">Newest First</option>
+                        <option value="popular">Most Liked</option>
+                        <option value="title">A-Z</option>
+                    </select>
+                </div>
+                <div class="innovations-grid" id="innovations-grid">
+                    <!-- Ideas will be loaded here -->
+                </div>
+                <div class="no-results" id="no-results" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <p>No innovations found. Be the first to share!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Share Your Innovation?</h2>
+                <p>Join our community of creative problem-solvers and help others with your unique ideas</p>
+                <a href="submit.html" class="cta-button primary large">
+                    <i class="fas fa-rocket"></i>
+                    <span>Submit Your Idea</span>
+                    <div class="button-glow"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>InnoHub</span>
+                    </div>
+                    <p>Empowering micro-innovations worldwide through community collaboration.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Browse Ideas</a></li>
+                        <li><a href="submit.html">Submit Innovation</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Environment</a></li>
+                        <li><a href="#">Health & Wellness</a></li>
+                        <li><a href="#">Education</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 InnoHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
